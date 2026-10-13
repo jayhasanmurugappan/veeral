@@ -157,6 +157,8 @@ home:function(){return ''+
  WHY.map(function(w){return '<div class="why"><div class="ic">'+'<span class="gi" style="--m:url('+src("mask-"+w[0])+')"></span>'+'</div><span>'+w[1]+'</span></div>'}).join("")+'</div></div></section>'+
 '<section class="blk"><div class="wrap"><div class="head"><span class="eyebrow">Industries & applications</span><h2>Powering the world’s most demanding applications</h2></div><div class="grid3">'+
  INDUSTRIES.map(function(i){return '<div class="card"><div class="thumb">'+im(i[0],i[1])+'</div><div class="body"><h3>'+i[1]+'</h3><p>'+i[2]+'</p></div></div>'}).join("")+'</div></div></section>'+
+'<section class="blk"><div class="wrap"><div class="head"><span class="eyebrow">Beyond the converter</span><h2>Reliable power, with intelligence on top</h2><p>Veeral builds the power. India4.0 adds the Industry 4.0 layer: local wireless monitoring, live power-system models and retrofit know-how.</p></div><div class="grid4">'+
+ [["reliability","Reliability heritage","Since 1993, in service across 9+ countries."],["platform","Platform","A power module that partners build applications on."],["monitoring","Monitoring","MeshNet and on-site AI, no internet needed."],["retrofit","Retrofit &amp; revamp","Older equipment brought back into service."]].map(function(c){return '<a class="card" href="#'+c[0]+'"><div class="body"><h3>'+c[1]+'</h3><p>'+c[2]+'</p></div></a>'}).join("")+'</div></div></section>'+
 '<section class="blk band"><div class="wrap"><div class="head"><span class="eyebrow">Trusted by industry leaders</span><h2>Our clients include</h2></div><div class="clients">'+
  CLIENTS.map(function(c){return '<div class="client">'+im(c[0],c[1])+'</div>'}).join("")+'</div></div></section>'+
 '<section class="blk"><div class="wrap"><div class="head"><span class="eyebrow">Recent events</span><h2>On the road and on the floor</h2></div><div class="grid3">'+
@@ -208,6 +210,41 @@ jobs:function(){return ''+
  '<div class="card" style="margin-top:26px;padding:22px;display:grid;gap:10px"><h3>Ready to power your career?</h3><p class="muted">Send your resume and cover letter to our recruitment team.</p><span class="copy"><span class="mono">priya@veeral.com</span>'+copyBtn("priya@veeral.com","Copy email")+'<a class="btn primary sm" href="mailto:priya@veeral.com">Apply Now</a></span></div></div></section>'}
 };
 
+
+/* ---------- India4.0 partnership pages ---------- */
+function pgHead(eb,h1,lead,draft){return '<section class="blk"><div class="wrap"><div class="head"><span class="eyebrow">'+eb+'</span><h1 style="font-size:clamp(1.8rem,4vw,2.8rem)">'+h1+'</h1><p>'+lead+'</p>'+(draft?'<span class="tag">Draft for review</span>':'')+'</div></div></section>'}
+function pgSec(eb,h,body,band){return '<section class="blk'+(band?' band':'')+'"><div class="wrap"><div class="head"><span class="eyebrow">'+eb+'</span><h2>'+h+'</h2></div>'+body+'</div></section>'}
+function pgCards(list){return '<div class="grid3">'+list.map(function(c){return '<div class="card"><div class="body"><h3>'+c[0]+'</h3><p>'+c[1]+'</p></div></div>'}).join("")+'</div>'}
+function pgAsk(t,q){return '<section class="blk band"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center"><div><h2>'+t+'</h2></div><div class="cta" style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn primary" href="#contact">Contact us</a><button class="btn wa" data-open-wa data-ask="'+esc(q)+'">Ask on WhatsApp</button></div></div></section>'}
+var HERITAGE=["2000","2005","2007","2010","2016-2018","2018","2019","2020","2022","2025"];
+PAGES.reliability=function(){return pgHead("Reliability heritage","Reliable since 1993","Veeral builds power converters that stay in service. The record below comes from projects already listed on this site.")+
+ pgSec("By the record","Built to last in the field",pgCards([["1993","Inception of Veeral Controls. Over three decades of design and field experience."],["ISO 9001:2015","Certified processes for safety, precision, ultra-low ripple and high reliability."],["8-15 years","Systems run in harsh climates for 8-15 years with consistent performance."],["9+ countries","Projects executed in the United States, South Korea, Germany, Turkey, Sri Lanka, Australia, Oman and India."]]))+
+ pgSec("Milestones","Systems that went into service",'<ul class="tl" style="padding:0">'+TIMELINE.filter(function(t){return HERITAGE.indexOf(t[0])>=0}).map(function(t){return '<li><span class="yr">'+t[0]+'</span><span>'+t[1]+'</span></li>'}).join("")+'</ul>',true)+
+ pgSec("How it is built","In-house design, tested for extremes",pgCards(DIFF.slice(2,5)))+
+ pgAsk("Need equipment that runs for years?","I would like to discuss reliable power converters for continuous duty")}
+
+PAGES.platform=function(){return pgHead("Platform","A power module that partners build on","Veeral supplies the power module. Partners and system builders add their own gate drivers and DSP programming for solar, BESS, active filters and other applications. India4.0 adds the intelligence layer on top.","draft")+
+ pgSec("Three layers","Who provides what",pgCards([["Power module: Veeral","The power stack, gate drivers and DSP controller, built in-house with IGBT and SiC stacks up to 6.5 kV / 2400 A."],["Application: partners","System builders program the DSP and add gate drivers for their own use: solar, BESS, active filters and more."],["Intelligence: India4.0","An edge computer, RS485 read/write with minimal controls, MeshNet connectivity and AI that runs on site."]]))+
+ pgSec("Data already available","What the installed base can report",'<div class="sheet"><header><span>Readings exposed by Veeral equipment</span><span>Via RS485</span></header><div class="row"><span>Power</span><span>kW</span></div><div class="row"><span>Voltage</span><span>kV</span></div><div class="row"><span>Power factor</span><span>PF</span></div><div class="row"><span>Distortion</span><span>THD and harmonics</span></div></div><p class="muted" style="margin-top:16px;max-width:64ch">With MeshNet and on-site AI, these readings can become services, not only hardware sales.</p>',true)+
+ pgSec("Concept stage","Product directions under evaluation",pgCards([["SiC MOSFET active filter, about 100 kW","Low-voltage active filters are becoming a commodity. A compact SiC design is being evaluated."],["Economical 1 MW solar / BESS converter","A cost-focused converter on the same module platform."]]))+
+ pgAsk("Building an application on a power module?","I would like to know about the Veeral power module platform")}
+
+PAGES.monitoring=function(){return pgHead("Monitoring","Monitoring that works without the internet","MeshNet is a decentralised, controlled-access wireless mesh. Nothing depends on the internet or a central server.")+
+ pgSec("MeshNet","One local network for machine data and cameras",pgCards([["No central server","Nothing depends on the internet or a central server, and it works without them."],["Machine data and CCTV","Carries Modbus machine data and CCTV with minimal cabling, at about 100-150 Mbps local speed."],["Our firmware on branded routers","Runs on branded routers with our firmware. Custom connectors are built within about a week."],["MeshComm","Calls inside the mesh."],["Netranet","A prioritised channel for cameras and screens."],["MeshNet AI Store","An e-commerce portal for vendors."]]))+
+ pgSec("ETAP Evolved","A live power-system model in the browser",pgCards([["The problem","Customers usually receive only PDF study reports and cannot re-run them. A full ETAP-class licence is expensive, so smaller factories go without."],["What it models","A 132 kV to 415 V system with 4 voltage levels and 9 buses: AC load flow, short circuit, WLS data-integrity estimation and relay coordination."],["How it connects","Animated single-line diagram, an admin AI agent, NTP and IEEE 1588 PTP time sync, IEC 61850, and readers for Modbus, BACnet, OPC UA, Profibus and Profinet."]]),true)+
+ pgSec("Digital twin","A 3D model of the factory floor",'<div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><p>The 3D factory engine rebuilds a plant in the browser. It has been shown on a 10-acre factory with an airflow simulation, HVLS fans and distribution panels.</p><p>AI needs a lot of data. One power quality instrument logging about 1,000 parameters every second produces about 86 million readings a day, or about 2.6 billion in 30 days.</p></div>')+
+ pgAsk("Want to see your plant monitored?","I would like to know about MeshNet monitoring")}
+
+PAGES.retrofit=function(){return pgHead("Retrofit &amp; revamp","Older equipment, back in service","Few companies want to touch older equipment. Retrofit and revamp is a core part of the India4.0 and Veeral offer.")+
+ pgSec("Worked examples","What has been done",pgCards([["Flood-damaged panels revived in 2 days","About 2.5 MVA of panels, more than 10 years old, at a Fortune 500 plant in Chennai, brought back into service in 2 days."],["Flashover analysis on a 200 MVAR reactor","Analysis from SVC controller data recorded at 1 ms resolution."],["Power quality analysis","On-site measurement and analysis using Fluke, Krykard and similar meters."]]))+
+ pgSec("Next","Veeral installed base",'<p class="muted" style="max-width:64ch">Revamping the older equipment of Veeral’s existing customers is planned as a service line, with monitoring added through MeshNet.</p>',true)+
+ pgAsk("Have equipment that needs a second life?","I have older equipment that needs retrofit or revamp")}
+
+PAGES.partners=function(){return pgHead("Partners","Partners and community","India4.0 works with Veeral as a partner and does not own Veeral’s technology. Most of its work stays in the background.","draft")+
+ pgSec("Who it is for","Ways to take part",pgCards([["System builders","Build your own application on the Veeral power module with your own gate drivers and DSP programming."],["Veeral customers","Add monitoring and diagnostics to installed equipment through MeshNet and on-site AI."],["Community","An online ecosystem around Veeral, with AI support for partners and customers."]]))+
+ pgSec("About India4.0","The Industry 4.0 partner",'<p class="muted" style="max-width:64ch">India4.0 (<a href="https://india4o.com" target="_blank" rel="noopener noreferrer">india4o.com</a>) works on power quality analysis, microgrids and Industry 4.0.</p>',true)+
+ pgAsk("Interested in partnering?","I would like to discuss partnering with Veeral")}
+
 /* ---------- launch kit ---------- */
 function headSnippet(){
 var ld={"@context":"https://schema.org","@type":"Organization","name":"Veeral Controls Pvt. Ltd.","url":"https://"+SITE+"/","logo":"https://"+SITE+"/assets/icons/icon-512.png","foundingDate":"1993","description":"Power-electronics engineering company: high-current rectifiers, IGBT/SiC stacks, STATCOMs, active harmonic filters, wind and solar converters, defence power electronics.","telephone":"+91 99099 43601","email":"info@veeral.com","address":{"@type":"PostalAddress","streetAddress":"B-29 GIDC, Sector-25","addressLocality":"Gandhinagar","postalCode":"382044","addressRegion":"Gujarat","addressCountry":"IN"}};
@@ -230,7 +267,7 @@ return ['<title>Veeral Controls | Power Electronics, Rectifiers, STATCOMs, Inver
 '<meta name="twitter:card" content="summary_large_image">',
 '<script type="application/ld+json">'+JSON.stringify(ld,null,2)+'<\/script>'].join("\n")}
 function launch(){
-var ROUTES=["","products.html","about.html","contact.html","jobs.html"].concat(PRODUCTS.map(function(p){return p.s+".html"}));
+var ROUTES=["","products.html","reliability.html","platform.html","monitoring.html","retrofit.html","partners.html","about.html","contact.html","jobs.html"].concat(PRODUCTS.map(function(p){return p.s+".html"}));
 var sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+ROUTES.map(function(r){return '  <url><loc>https://'+SITE+'/'+r+'</loc></url>'}).join("\n")+'\n</urlset>';
 var robots="User-agent: *\nAllow: /\nSitemap: https://"+SITE+"/sitemap.xml";
 var manifest=JSON.stringify({name:"Veeral Controls",short_name:"Veeral",start_url:"/",display:"standalone",background_color:"#F6F5F2",theme_color:"#F00012",icons:[{src:"/assets/icons/icon-192.png",sizes:"192x192",type:"image/png"},{src:"/assets/icons/icon-512.png",sizes:"512x512",type:"image/png"},{src:"/assets/icons/maskable-512.png",sizes:"512x512",type:"image/png",purpose:"maskable"}]},null,2);
@@ -264,8 +301,108 @@ function detail(p){
   '<p style="margin-top:20px"><strong>Applications:</strong> <span class="muted">'+esc(p.a)+'</span></p><div class="cta" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px"><button class="btn wa" data-open-wa data-ask="'+esc("I would like to know more about "+p.n)+'">Ask about this product</button><a class="btn ghost" href="#contact">Send an enquiry</a></div></div><div class="card thumb prod" style="max-width:460px">'+im(p.im,p.n)+'</div></div>'+
   (rel.length?'<h3 class="eyebrow" style="margin:48px 0 14px">More in '+GROUPS[p.g]+'</h3><div class="grid3">'+rel.map(pCard).join("")+'</div>':'')+'</div></section>'}
 
+
+/* ---------- colour themes ---------- */
+var TH_ROLES=[["bg","Page background"],["surface","Cards and panels"],["ink","Main text"],["muted","Secondary text"],["line","Lines and borders"],["accent","Primary accent"],["accent2","Second accent"],["on","Text on accent"]];
+var TH_VARS={bg:["--bg"],surface:["--surface"],ink:["--fg"],muted:["--muted"],line:["--line"],accent:["--red","--red-deep","--red-ink"],accent2:["--navy"],on:["--on-red"]};
+var THEMES=[
+ {id:"signal",name:"Veeral Signal",note:"Warm paper, signal red, navy",c:{bg:"#F6F5F2",surface:"#FCFBF8",ink:"#231F1B",muted:"#6B6560",line:"#E0DDD5",accent:"#C8001A",accent2:"#125068",on:"#FFFFFF"}},
+ {id:"night",name:"Veeral Night",note:"Dark version for screens",c:{bg:"#262423",surface:"#2E2C2B",ink:"#EDEBE6",muted:"#A9A59E",line:"#46423F",accent:"#FF4D5A",accent2:"#35BCED",on:"#1A0508"}},
+ {id:"grid",name:"Grid Blue",note:"Navy-led, red second accent",c:{bg:"#EEF3F6",surface:"#FFFFFF",ink:"#12303D",muted:"#53707E",line:"#CCDAE2",accent:"#125068",accent2:"#C8001A",on:"#FFFFFF"}},
+ {id:"copper",name:"Copper Works",note:"Warm copper with green support",c:{bg:"#F4EFE8",surface:"#FBF8F3",ink:"#2A211B",muted:"#7A6A5C",line:"#E2D8CB",accent:"#B4531A",accent2:"#3E5C4B",on:"#FFFFFF"}},
+ {id:"graphite",name:"Graphite Green",note:"Dark graphite, green and sky",c:{bg:"#1B1F23",surface:"#242A30",ink:"#E7ECEF",muted:"#9AA6AF",line:"#39424B",accent:"#7BD389",accent2:"#5AB0E8",on:"#0B1F10"}}];
+var thmCur=null;
+function hexLum(h){var n=parseInt(h.slice(1),16),c=[n>>16,(n>>8)&255,n&255].map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function applyColours(c){
+  var st=document.documentElement.style;
+  TH_ROLES.forEach(function(r){TH_VARS[r[0]].forEach(function(v){c?st.setProperty(v,c[r[0]]):st.removeProperty(v)})});
+  if(c){st.setProperty("--panel","color-mix(in srgb, "+c.surface+" 82%, "+c.line+")");st.setProperty("color-scheme",hexLum(c.bg)<.2?"dark":"light")}
+  else{st.removeProperty("--panel");st.removeProperty("color-scheme")}
+}
+function thmSave(){try{thmCur?localStorage.setItem("veeral-colours",JSON.stringify(thmCur)):localStorage.removeItem("veeral-colours")}catch(e){}}
+function thmCss(){var c=thmCur||THEMES[0].c;return ":root{\n  --bg:"+c.bg+"; --surface:"+c.surface+"; --fg:"+c.ink+"; --muted:"+c.muted+"; --line:"+c.line+";\n  --red:"+c.accent+"; --red-deep:"+c.accent+"; --red-ink:"+c.accent+"; --navy:"+c.accent2+"; --on-red:"+c.on+";\n}"}
+function thmRender(){
+  var list=$("#thmList");list.textContent="";
+  THEMES.forEach(function(t){
+    var b=document.createElement("button");b.type="button";b.className="thm-opt";
+    var on=thmCur&&TH_ROLES.every(function(r){return thmCur[r[0]].toLowerCase()===t.c[r[0]].toLowerCase()});
+    b.setAttribute("aria-pressed",String(!!on));
+    var sw=document.createElement("span");sw.className="thm-sw";["bg","surface","accent","accent2","ink"].forEach(function(k){var i=document.createElement("i");i.style.background=t.c[k];sw.appendChild(i)});
+    var tx=document.createElement("span");var nb=document.createElement("b");nb.textContent=t.name;var sm=document.createElement("small");sm.textContent=t.note;tx.appendChild(nb);tx.appendChild(sm);
+    b.appendChild(sw);b.appendChild(tx);
+    b.addEventListener("click",function(){thmCur=Object.assign({},t.c);applyColours(thmCur);thmSave();thmRender()});
+    list.appendChild(b);
+  });
+  var rows=$("#thmRows");rows.textContent="";
+  var base=thmCur||THEMES[0].c;
+  TH_ROLES.forEach(function(r){
+    var d=document.createElement("label");d.className="thm-row";
+    var i=document.createElement("input");i.type="color";i.value=base[r[0]].toLowerCase();i.setAttribute("aria-label",r[1]);
+    i.addEventListener("input",function(){thmCur=Object.assign({},thmCur||THEMES[0].c);thmCur[r[0]]=i.value.toUpperCase();applyColours(thmCur);thmSave()});
+    i.addEventListener("change",thmRender);
+    var t=document.createElement("span");t.textContent=r[1];d.appendChild(i);d.appendChild(t);rows.appendChild(d);
+  });
+}
+function thmOpen(o){$("#thmPanel").classList.toggle("open",o);$("#thmTab").setAttribute("aria-expanded",String(o));if(o)thmRender()}
+$("#thmTab").addEventListener("click",function(){thmOpen(!$("#thmPanel").classList.contains("open"))});
+$("#thmClose").addEventListener("click",function(){thmOpen(false)});
+$("#thmReset").addEventListener("click",function(){thmCur=null;applyColours(null);thmSave();thmRender()});
+$("#thmCopy").addEventListener("click",function(){var b=this,o=b.textContent;try{navigator.clipboard.writeText(thmCss()).then(function(){b.textContent="Copied";setTimeout(function(){b.textContent=o},1400)})}catch(e){}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")thmOpen(false)});
+try{var sc=JSON.parse(localStorage.getItem("veeral-colours")||"null");if(sc&&TH_ROLES.every(function(r){return /^#[0-9a-fA-F]{6}$/.test(sc[r[0]])})){thmCur=sc;applyColours(sc)}}catch(e){}
+
+/* ---------- admin page (/admini) ---------- */
+var G_LOGO='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
+var M_LOGO='<svg viewBox="0 0 23 23" aria-hidden="true"><path fill="#F25022" d="M1 1h10v10H1z"/><path fill="#7FBA00" d="M12 1h10v10H12z"/><path fill="#00A4EF" d="M1 12h10v10H1z"/><path fill="#FFB900" d="M12 12h10v10H12z"/></svg>';
+PAGES.admini=function(){return '<div class="adm"><div class="adm-card" id="admCard">'+
+ '<div class="adm-brand"><img data-img="logo-mark" alt="" width="55" height="40"><span class="wm" role="img" aria-label="Veeral Controls" data-mask="mask-word"></span></div>'+
+ '<div><h1>Admin sign-in</h1><p style="margin-top:6px">Use your work account to manage the Veeral website.</p></div>'+
+ '<div id="admIn" style="display:grid;gap:12px"><button class="adm-btn" id="admG" type="button">'+G_LOGO+'<span>Sign in with Google</span></button>'+
+ '<button class="adm-btn" id="admM" type="button">'+M_LOGO+'<span>Sign in with Microsoft</span></button></div>'+
+ '<div class="adm-out" id="admOut" hidden><p>Signed in as</p><div class="who" id="admWho"></div><button class="adm-btn alt" id="admThm" type="button">Open colour themes</button><button class="adm-btn alt" id="admOutBtn" type="button">Sign out</button></div>'+
+ '<div class="adm-msg" id="admMsg" role="status" aria-live="polite"></div>'+
+ '<a class="back" href="#home">Back to the Veeral website</a></div></div>'};
+var FB="https://www.gstatic.com/firebasejs/10.14.1/";
+var admAuth=null,admMods=null;
+function admMsg(t){var m=$("#admMsg");if(m)m.textContent=t||""}
+function admShow(u){
+  var inn=$("#admIn"),out=$("#admOut");if(!inn||!out)return;
+  inn.hidden=!!u;out.hidden=!u;if(u)$("#admWho").textContent=(u.displayName?u.displayName+" · ":"")+(u.email||"");
+}
+async function admLoad(){
+  var cfg=window.VEERAL_FIREBASE;
+  if(!cfg||!cfg.apiKey){admMsg("Sign-in is not connected yet. It will work on veeral.i5o.in once the Firebase settings are added.");return null}
+  if(admAuth)return admMods;
+  var app=await import(FB+"firebase-app.js"),au=await import(FB+"firebase-auth.js");
+  var a=app.getApps().length?app.getApp():app.initializeApp(cfg);
+  admAuth=au.getAuth(a);admMods=au;
+  au.onAuthStateChanged(admAuth,function(u){
+    var ok=u&&(!cfg.allowed||!cfg.allowed.length||cfg.allowed.map(function(x){return x.toLowerCase()}).indexOf((u.email||"").toLowerCase())>=0);
+    if(u&&!ok){admMsg((u.email||"This account")+" is not on the admin list.");au.signOut(admAuth);return}
+    admShow(ok?u:null);if(ok)admMsg("");
+  });
+  return admMods;
+}
+async function admSign(kind){
+  admMsg("");
+  try{
+    var au=await admLoad();if(!au)return;
+    var p=kind==="google"?new au.GoogleAuthProvider():new au.OAuthProvider("microsoft.com");
+    if(kind==="google")p.setCustomParameters({prompt:"select_account"});else p.setCustomParameters({prompt:"select_account"});
+    await au.signInWithPopup(admAuth,p);
+  }catch(e){admMsg("Sign-in failed: "+((e&&(e.code||e.message))||"unknown error"))}
+}
+function wireAdmin(){
+  if(!$("#admG"))return;
+  $("#admG").addEventListener("click",function(){admSign("google")});
+  $("#admM").addEventListener("click",function(){admSign("microsoft")});
+  $("#admOutBtn").addEventListener("click",async function(){try{if(admAuth)await admMods.signOut(admAuth)}catch(e){}admShow(null)});
+  $("#admThm").addEventListener("click",function(){if(location.pathname.indexOf("/admini")===0){location.href="/?colours=1"}else{location.hash="#home";thmOpen(true)}});
+  if(window.VEERAL_FIREBASE&&window.VEERAL_FIREBASE.apiKey)admLoad().catch(function(e){admMsg("Sign-in could not start: "+(e&&e.message||e))});
+}
+
 /* ---------- router ---------- */
-var LABEL={home:"Home",products:"Products",about:"About us",contact:"Contact",jobs:"Jobs",launch:"Launch kit"};
+var LABEL={reliability:"Reliability",platform:"Platform",monitoring:"Monitoring",retrofit:"Retrofit",partners:"Partners",home:"Home",products:"Products",about:"About us",contact:"Contact",jobs:"Jobs",launch:"Launch kit",admini:"Admin"};
 var route="home";
 function go(){
   var h=(location.hash||"#home").slice(1)||"home";
@@ -277,7 +414,7 @@ function go(){
   $$("#nav a").forEach(function(a){var r=a.dataset.r;a.classList.toggle("on",r===route||(r==="products"&&BYSLUG[route]))});
   $("#nav").classList.remove("open");$("#burger").setAttribute("aria-expanded","false");
   window.scrollTo(0,0);
-  wireForm();updateChips();
+  document.body.setAttribute("data-route",route);wireForm();wireAdmin();updateChips();
 }
 
 
@@ -367,5 +504,5 @@ function wireForm(){
   $("#enqText").addEventListener("input",function(){$("#enqLink").href=waUrl(this.value)});
   $("#enqCopy").addEventListener("click",function(){$("#enqText").select();var b=this;try{navigator.clipboard.writeText($("#enqText").value).then(function(){b.textContent="Copied"})}catch(e){document.execCommand("copy")}});
 }
-route=document.body.getAttribute("data-route")||"home";updateChips();wireForm();
+route=document.body.getAttribute("data-route")||"home";updateChips();wireForm();wireAdmin();try{if(/[?&]colours=1/.test(location.search))thmOpen(true)}catch(e){}
 })();

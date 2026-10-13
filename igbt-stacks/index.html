@@ -6,6 +6,7 @@
 <title>IGBT Stacks &amp; High Voltage Power Supplies | Veeral Controls</title>
 <meta name="description" content="Veeral designs IGBT and SiC power stacks rated up to 6.5 kV and 2400 A, plus precision high-voltage power supplies for critical applications. The...">
 <link rel="canonical" href="https://veeral.i5o.in/igbt-stacks/">
+
 <meta name="theme-color" content="#F00012">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
@@ -25,7 +26,49 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<script>try{var t=localStorage.getItem("veeral-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("veeral-theme");if(t)document.documentElement.setAttribute("data-theme",t);var c=JSON.parse(localStorage.getItem("veeral-colours")||"null");if(c){var s=document.documentElement.style,V={bg:["--bg"],surface:["--surface"],ink:["--fg"],muted:["--muted"],line:["--line"],accent:["--red","--red-deep","--red-ink"],accent2:["--navy"],on:["--on-red"]};for(var k in V)if(/^#[0-9a-fA-F]{6}$/.test(c[k]))V[k].forEach(function(v){s.setProperty(v,c[k])});s.setProperty("--panel","color-mix(in srgb, "+c.surface+" 82%, "+c.line+")")}}catch(e){}</script>
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* ---------- colour themes drawer (right edge) ---------- */
+#thmTab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:58;writing-mode:vertical-rl;background:var(--fg);color:var(--bg);border:0;border-radius:10px 0 0 10px;padding:14px 8px;font:600 .8rem var(--font);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;box-shadow:var(--shadow)}
+#thmPanel{position:fixed;right:0;top:0;bottom:0;z-index:70;width:min(360px,100vw);background:var(--surface);color:var(--fg);border-left:1px solid var(--line);box-shadow:-24px 0 50px -24px rgba(0,0,0,.45);display:flex;flex-direction:column;transform:translateX(105%);transition:transform .22s ease;visibility:hidden}
+#thmPanel.open{transform:none;visibility:visible}
+#thmPanel .th-h{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+#thmPanel .th-h b{font-size:1.05rem}
+#thmPanel .th-b{padding:16px 18px;overflow:auto;display:grid;gap:18px;align-content:start}
+#thmPanel h4{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.thm-list{display:grid;gap:8px}
+.thm-opt{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;text-align:left;font:inherit;color:inherit;background:transparent;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+.thm-opt[aria-pressed="true"]{border-color:var(--navy);box-shadow:0 0 0 1px var(--navy)}
+.thm-opt small{display:block;color:var(--muted);font-size:.76rem}
+.thm-sw{display:flex}.thm-sw i{width:16px;height:26px;display:block;border:1px solid var(--line);margin-left:-1px}
+.thm-sw i:first-child{border-radius:6px 0 0 6px;margin-left:0}.thm-sw i:last-child{border-radius:0 6px 6px 0}
+.thm-row{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center;font-size:.88rem}
+.thm-row input{width:40px;height:32px;padding:0;border:1px solid var(--line);border-radius:6px;background:transparent;cursor:pointer}
+@media print{#thmTab,#thmPanel{display:none}}
+/* ---------- admin page ---------- */
+body[data-route="admini"] header.bar,body[data-route="admini"] footer,body[data-route="admini"] #waBtn,body[data-route="admini"] #waPanel,body[data-route="admini"] #thmTab{display:none!important}
+body[data-route="admini"]{background:#0A1F44}
+.adm{min-height:100vh;display:grid;place-items:center;padding:32px 16px;background:radial-gradient(1200px 600px at 50% -10%,#16366F 0%,#0A1F44 55%,#07152F 100%);color:#fff}
+.adm-card{width:min(420px,100%);background:#0F2A5E;border:1px solid #27498A;border-radius:16px;padding:32px 28px;display:grid;gap:18px;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+.adm-brand{display:flex;align-items:center;gap:10px}.adm-brand img{width:55px;height:40px}
+.adm-brand .wm{display:inline-block;width:150px;height:22px;background:#fff;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.adm h1{font-size:1.6rem;font-weight:800;color:#fff}.adm p{color:#B9C8E6;font-size:.95rem}
+.adm-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:13px 16px;border-radius:8px;border:1px solid #DADCE0;background:#fff;color:#1F1F1F;font:600 .98rem var(--font);cursor:pointer}
+.adm-btn:hover{background:#F1F4F9}.adm-btn:disabled{opacity:.6;cursor:default}
+.adm-btn svg{width:20px;height:20px;flex:none}
+.adm-msg{min-height:1.4em;font-size:.88rem;color:#FFD9A0}
+.adm a.back{color:#9FC0FF;font-size:.9rem}
+.adm [hidden]{display:none!important}
+.adm-out{display:grid;gap:12px}.adm-out .who{font:500 .9rem var(--mono);color:#fff;word-break:break-all}
+.adm .adm-btn.alt{background:transparent;color:#fff;border-color:#4C6CA8}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Veeral Controls Pvt. Ltd.","url":"https://veeral.i5o.in/","logo":"https://veeral.i5o.in/assets/icons/icon-512.png","foundingDate":"1993","email":"info@veeral.com","telephone":"+91 99099 43601","address":{"@type":"PostalAddress","streetAddress":"B-29 GIDC, Sector-25","addressLocality":"Gandhinagar","postalCode":"382044","addressRegion":"Gujarat","addressCountry":"IN"}}</script>
+</head>
+<body data-route="igbt-stacks">
+<title>Veeral Controls</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
 <style>
 /* Layout: fixed top bar, 1200px content column, one warm paper ground, red used only for action and emphasis.
    Theme carried over from the QP site: Public Sans + IBM Plex Mono, signal red, navy secondary accent, 0.65rem radius. */
@@ -74,7 +117,7 @@ nav.main a:hover,nav.main a.on{color:var(--red-ink);background:var(--panel)}
 .icon-btn{border:1px solid var(--line);background:var(--surface);color:var(--fg);width:38px;height:38px;border-radius:9px;display:grid;place-items:center;cursor:pointer}
 .icon-btn:hover{border-color:var(--red)}
 .burger{display:none}
-@media(max-width:900px){
+@media(max-width:1240px){
   .burger{display:grid}
   nav.main{position:absolute;left:0;right:0;top:68px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:10px 20px 16px;display:none}
   nav.main.open{display:flex}
@@ -211,9 +254,7 @@ footer .fine{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);f
 @keyframes b{50%{opacity:.25;transform:translateY(-2px)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Veeral Controls Pvt. Ltd.","url":"https://veeral.i5o.in/","logo":"https://veeral.i5o.in/assets/icons/icon-512.png","foundingDate":"1993","email":"info@veeral.com","telephone":"+91 99099 43601","address":{"@type":"PostalAddress","streetAddress":"B-29 GIDC, Sector-25","addressLocality":"Gandhinagar","postalCode":"382044","addressRegion":"Gujarat","addressCountry":"IN"}}</script>
-</head>
-<body data-route="igbt-stacks">
+
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="/" aria-label="Veeral Controls home">
@@ -222,6 +263,11 @@ footer .fine{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);f
     <nav class="main" id="nav" aria-label="Main">
       <a href="/" data-r="home">Home</a>
       <a href="/products/" data-r="products" class="on">Products</a>
+      <a href="/reliability/" data-r="reliability">Reliability</a>
+      <a href="/platform/" data-r="platform">Platform</a>
+      <a href="/monitoring/" data-r="monitoring">Monitoring</a>
+      <a href="/retrofit/" data-r="retrofit">Retrofit</a>
+      <a href="/partners/" data-r="partners">Partners</a>
       <a href="/about/" data-r="about">About us</a>
       <a href="/contact/" data-r="contact">Contact</a>
       <a href="/jobs/" data-r="jobs">Jobs</a>
@@ -250,10 +296,16 @@ footer .fine{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);f
         <h4>Quick links</h4>
         <ul>
           <li><a href="/products/">Products</a></li>
+          <li><a href="/reliability/">Reliability</a></li>
+          <li><a href="/platform/">Platform</a></li>
+          <li><a href="/monitoring/">Monitoring</a></li>
+          <li><a href="/retrofit/">Retrofit &amp; revamp</a></li>
+          <li><a href="/partners/">Partners</a></li>
           <li><a href="/about/">About us</a></li>
           <li><a href="/contact/">Contact</a></li>
           <li><a href="/jobs/">Jobs</a></li>
           
+          <li><a href="/admini/" id="adminLink" target="_blank" rel="noopener">Admin</a></li>
         </ul>
       </div>
       <div>
@@ -300,6 +352,20 @@ footer .fine{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);f
     </div>
   </div>
 </section>
+
+<button id="thmTab" type="button" aria-controls="thmPanel" aria-expanded="false">Colours</button>
+<aside id="thmPanel" aria-label="Veeral colour themes">
+  <div class="th-h"><b>Veeral Colour Themes</b><button class="icon-btn" id="thmClose" type="button" aria-label="Close colour themes">×</button></div>
+  <div class="th-b">
+    <p class="muted" style="font-size:.88rem">Try a theme on this site. It applies on this device only and is remembered here.</p>
+    <div><h4>Standard themes</h4><div class="thm-list" id="thmList"></div></div>
+    <div><h4>Colours</h4><div class="thm-list" id="thmRows"></div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost sm" id="thmReset" type="button">Site default</button><button class="btn ghost sm" id="thmCopy" type="button">Copy CSS</button></div>
+  </div>
+</aside>
+
+
+
 
 
 
