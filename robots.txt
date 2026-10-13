@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://veeral.i5o.in/sitemap.xml

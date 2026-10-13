@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Veeral Controls | High-power electronics for extreme environments</title>
+<meta name="description" content="Veeral Controls designs power conversion systems for rail traction, renewable energy, plasma research and defence. 30+ years, ISO 9001:2015, Gandhinagar, India.">
+<link rel="canonical" href="https://veeral.i5o.in/">
+<meta name="theme-color" content="#F00012">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Veeral Controls">
+<meta property="og:title" content="Veeral Controls | High-power electronics for extreme environments">
+<meta property="og:description" content="Veeral Controls designs power conversion systems for rail traction, renewable energy, plasma research and defence. 30+ years, ISO 9001:2015, Gandhinagar, India.">
+<meta property="og:url" content="https://veeral.i5o.in/">
+<meta property="og:image" content="https://veeral.i5o.in/assets/og/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Veeral Controls power electronics">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("veeral-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+/* Layout: fixed top bar, 1200px content column, one warm paper ground, red used only for action and emphasis.
+   Theme carried over from the QP site: Public Sans + IBM Plex Mono, signal red, navy secondary accent, 0.65rem radius. */
+:root{
+  --bg:#F6F5F2; --surface:#FCFBF8; --panel:#EFEDE8; --fg:#231F1B; --muted:#6B6560; --line:#E0DDD5;
+  --red:#F00012; --red-deep:#C8001A; --red-ink:#C8001A; --navy:#125068; --on-red:#FFFFFF;
+  --logo-ink:#3A3C8C; --wa:#1FA855; --wa-ink:#FFFFFF; --shadow:0 18px 40px -22px rgba(35,31,27,.35);
+  --radius:10px; --font:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#262423; --surface:#2E2C2B; --panel:#343130; --fg:#EDEBE6; --muted:#A9A59E; --line:#46423F;
+  --red:#FF1A2B; --red-ink:#FF6B75; --navy:#35BCED; --logo-ink:#FFFFFF; --shadow:0 18px 40px -22px rgba(0,0,0,.7); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#262423; --surface:#2E2C2B; --panel:#343130; --fg:#EDEBE6; --muted:#A9A59E; --line:#46423F;
+  --red:#FF1A2B; --red-ink:#FF6B75; --navy:#35BCED; --logo-ink:#FFFFFF; --shadow:0 18px 40px -22px rgba(0,0,0,.7); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-inline:0;margin:0}
+img{max-width:100%;display:block}
+a{color:var(--red-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,5.2vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.6rem,3.2vw,2.3rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--navy)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+section.blk{padding-block:64px}
+.head{display:grid;gap:10px;margin-bottom:32px;max-width:720px}
+.head p{color:var(--muted)}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);font-weight:700;letter-spacing:.08em;font-size:1rem;text-decoration:none!important}
+.brand svg{width:34px;height:34px;flex:none}
+.brand small{display:block;font-weight:500;letter-spacing:.2em;font-size:.6rem;color:var(--muted);text-transform:uppercase}
+nav.main{display:flex;gap:4px;align-items:center}
+nav.main a{padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:500;font-size:.92rem;text-decoration:none}
+nav.main a:hover,nav.main a.on{color:var(--red-ink);background:var(--panel)}
+.icon-btn{border:1px solid var(--line);background:var(--surface);color:var(--fg);width:38px;height:38px;border-radius:9px;display:grid;place-items:center;cursor:pointer}
+.icon-btn:hover{border-color:var(--red)}
+.burger{display:none}
+@media(max-width:900px){
+  .burger{display:grid}
+  nav.main{position:absolute;left:0;right:0;top:68px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:10px 20px 16px;display:none}
+  nav.main.open{display:flex}
+  nav.main a{padding:12px}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:.95rem;padding:12px 20px;border-radius:9px;border:1px solid transparent;cursor:pointer;text-decoration:none!important;transition:transform .2s,box-shadow .2s}
+.btn.primary{background:linear-gradient(135deg,#F00012,#C8001A);color:var(--on-red);box-shadow:0 10px 26px -12px rgba(240,0,18,.7)}
+.btn.primary:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--fg)}
+.btn.ghost:hover{border-color:var(--red);color:var(--red-ink)}
+.btn.wa{background:var(--wa);color:var(--wa-ink)}
+.btn.sm{padding:8px 14px;font-size:.85rem}
+
+/* hero */
+.hero{padding-block:56px 40px}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1 em{font-style:normal;color:var(--red-ink)}
+.hero p.lead{margin-top:18px;color:var(--muted);font-size:1.1rem;max-width:56ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;padding-top:20px;border-top:1px solid var(--line);font-size:.92rem}
+.trust b{font-family:var(--mono);color:var(--fg)}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.sheet header{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.sheet .row{display:flex;justify-content:space-between;gap:16px;padding:11px 16px;border-bottom:1px dashed var(--line);font-size:.9rem}
+.sheet .row span:last-child{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--navy);font-weight:600;text-align:right}
+.wave{padding:12px 16px 16px}
+.wave svg{width:100%;height:auto}
+.wave small{display:flex;justify-content:space-between;color:var(--muted);font-size:.72rem}
+@media(max-width:900px){.hero .grid{grid-template-columns:1fr}}
+
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-width:0}
+.card .body{padding:18px;display:grid;gap:8px}
+.card .body p{color:var(--muted);font-size:.93rem}
+a.card{color:inherit;text-decoration:none!important;transition:border-color .25s,transform .25s}
+a.card:hover{border-color:var(--red);transform:translateY(-3px)}
+.thumb{aspect-ratio:4/3;background:var(--panel);display:grid;place-items:center;overflow:hidden}
+.thumb.prod{aspect-ratio:4/5;background:#fff}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.ph{width:100%;height:100%;min-height:100%;display:grid;place-items:center;padding:12px;text-align:center;color:var(--muted);font-size:.8rem;font-weight:600;letter-spacing:.04em;background:repeating-linear-gradient(135deg,var(--panel) 0 12px,color-mix(in srgb,var(--panel) 88%,var(--fg)) 12px 13px)}
+.tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);border:1px solid var(--line);border-radius:99px;padding:3px 10px;width:max-content}
+.why{display:flex;gap:14px;align-items:center;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.why .ic{width:44px;height:44px;border-radius:10px;background:var(--panel);display:grid;place-items:center;flex:none;overflow:hidden}
+.gi{display:block;width:28px;height:28px;background:var(--navy);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.lg{display:inline-flex;align-items:center;gap:10px}.lg img{height:40px;width:auto}.wm{display:block;height:16px;aspect-ratio:586/55;background:var(--logo-ink);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}@media(max-width:520px){.lg img{height:34px}.wm{height:13px}}
+.why .ic .ph{background:none;font-size:0}
+.clients{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.client{height:96px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);display:grid;place-items:center;padding:10px;overflow:hidden}
+.client img{width:100%;height:100%;object-fit:contain}
+.client .ph{background:none;font-size:.82rem;color:#231F1B}
+.band{background:var(--panel);border-block:1px solid var(--line)}
+
+/* timeline */
+.tl{display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.tl li{list-style:none;position:relative;padding:0 0 22px 24px;display:grid;grid-template-columns:96px 1fr;gap:14px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--red)}
+.tl .yr{font-family:var(--mono);font-weight:600;color:var(--red-ink);font-size:.95rem}
+.tl ul{padding:0;margin:0}
+@media(max-width:560px){.tl li{grid-template-columns:1fr;gap:2px}}
+
+/* product detail */
+.crumbs{font-size:.85rem;color:var(--muted);margin-bottom:18px}
+.detail{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+.detail ul.ticks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.detail ul.ticks li{padding-left:26px;position:relative}
+.detail ul.ticks li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:2px;background:var(--red)}
+@media(max-width:900px){.detail{grid-template-columns:1fr}}
+
+/* team, jobs, contact */
+.person{padding:18px;display:grid;gap:4px;justify-items:start}
+.avatar{width:96px;height:96px;border-radius:50%;overflow:hidden;background:var(--panel);margin-bottom:8px}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar .ph{border-radius:50%;font-size:1.3rem;padding:0}
+.job{padding:20px;display:grid;gap:8px}
+.job ul{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:.93rem}
+.copy{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.kv{display:grid;gap:18px}
+.kv div{display:grid;gap:2px}
+.kv span.k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+form.enq{display:grid;gap:14px;padding:22px}
+label{font-size:.85rem;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+textarea{min-height:96px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.two{grid-template-columns:1fr}}
+.out{background:var(--panel);border:1px dashed var(--line);border-radius:10px;padding:14px;display:grid;gap:10px}
+.out textarea{min-height:110px}
+pre.code{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;font-family:var(--mono);font-size:.78rem;line-height:1.55;overflow-x:auto;white-space:pre}
+.kit{display:grid;gap:14px}
+.kit table{width:100%;border-collapse:collapse;font-size:.9rem}
+.kit th,.kit td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.kit .scroll{overflow-x:auto}
+.gap{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.gap b{font-family:var(--mono);color:var(--red-ink);min-width:2.2em}
+
+/* footer */
+footer{background:var(--panel);border-top:1px solid var(--line);padding-block:44px 120px;margin-top:40px}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:30px}
+footer h4{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+footer p,footer li{color:var(--muted);font-size:.92rem}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+footer .fine{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr}}
+
+/* whatsapp assistant */
+#waBtn{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:10px;background:var(--wa);color:var(--wa-ink);border:0;border-radius:99px;padding:13px 18px 13px 14px;font:inherit;font-weight:600;cursor:pointer;box-shadow:0 14px 30px -10px rgba(31,168,85,.65)}
+#waBtn svg{width:26px;height:26px}
+#waBtn:hover{transform:translateY(-2px)}
+@media(max-width:520px){#waBtn span{display:none}#waBtn{padding:14px}}
+#waPanel{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:61;width:min(400px,calc(100vw - 32px));max-height:min(620px,calc(100% - 110px));display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);overflow:hidden}
+#waPanel[hidden]{display:none!important}
+.wa-head{background:var(--wa);color:var(--wa-ink);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.wa-head b{display:block;font-size:.98rem}
+.wa-head small{opacity:.9;font-size:.76rem}
+.wa-head button{background:transparent;border:0;color:inherit;cursor:pointer;font-size:1.3rem;line-height:1;padding:4px 8px}
+#waLog{padding:14px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;min-height:150px}
+.msg{max-width:88%;padding:9px 12px;border-radius:12px;font-size:.92rem;white-space:pre-wrap;word-wrap:break-word}
+.msg.bot{background:var(--panel);align-self:flex-start;border-bottom-left-radius:4px}
+.msg.me{background:var(--navy);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+:root[data-theme="dark"] .msg.me{color:#0d2530}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .msg.me{color:#0d2530}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.chip{font:inherit;font-size:.8rem;padding:6px 10px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}
+.chip:hover{border-color:var(--wa)}
+.wa-in{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+.wa-in input{flex:1}
+.wa-foot{padding:0 12px 12px;display:grid;gap:8px}
+.wa-foot .out{margin:0}
+.dots{display:inline-flex;gap:4px}.dots i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:b 1s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes b{50%{opacity:.25;transform:translateY(-2px)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Veeral Controls Pvt. Ltd.","url":"https://veeral.i5o.in/","logo":"https://veeral.i5o.in/assets/icons/icon-512.png","foundingDate":"1993","email":"info@veeral.com","telephone":"+91 99099 43601","address":{"@type":"PostalAddress","streetAddress":"B-29 GIDC, Sector-25","addressLocality":"Gandhinagar","postalCode":"382044","addressRegion":"Gujarat","addressCountry":"IN"}}</script>
+</head>
+<body data-route="home">
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Veeral Controls home">
+      <span class="lg"><img data-img="logo-mark" alt="" width="55" height="40" src="/assets/img/logo-mark.webp"><span class="wm" role="img" aria-label="Veeral Controls" data-mask="mask-word" style="--m: url(/assets/img/mask-word.png);"></span></span>
+    </a>
+    <nav class="main" id="nav" aria-label="Main">
+      <a href="/" data-r="home" class="on">Home</a>
+      <a href="/products/" data-r="products" class="on">Products</a>
+      <a href="/about/" data-r="about">About us</a>
+      <a href="/contact/" data-r="contact">Contact</a>
+      <a href="/jobs/" data-r="jobs">Jobs</a>
+    </nav>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch light or dark theme" title="Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+      </button>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="app"><section class="hero"><div class="wrap grid"><div><span class="eyebrow">Power electronics, Gandhinagar</span><h1 style="margin-top:12px">Advanced Power Electronics for a <em>High-Energy</em> World</h1><p class="lead">Mission-grade power-conversion systems engineered for extreme environments, precision applications, and global critical infrastructure.</p><div class="cta"><a class="btn primary" href="/products/">Explore Products</a><a class="btn ghost" href="/contact/">Talk to our team</a></div><div class="trust"><span><b>ISO 9001:2015</b> Certified</span><span><b>32+ Years</b> Engineering Leadership</span><span>Trusted in <b>9+ Countries</b></span></div></div><div class="sheet"><header><span>Spec sheet</span><span>Veeral Controls</span></header><div class="row"><span>High-current rectifier</span><span>72 kA</span></div><div class="row"><span>IGBT / SiC stack</span><span>6.5 kV / 2400 A</span></div><div class="row"><span>Rise time</span><span>&lt; 10 µs</span></div><div class="row"><span>Magnet supply ripple</span><span>100 ppm</span></div><div class="row"><span>Wind converters installed</span><span>400 MW</span></div><div class="wave"><svg viewBox="0 0 320 96" role="img" aria-label="Current waveform before and after active harmonic filtering"><line x1="0" y1="48" x2="320" y2="48" stroke="var(--line)"></line><path d="M0.0 48.0L2.0 39.4L4.0 32.2L6.0 27.6L8.0 26.1L10.0 27.4L12.0 30.8L14.0 34.9L16.0 38.4L18.0 40.4L20.0 40.2L22.0 37.9L24.0 34.1L26.0 29.6L28.0 25.3L30.0 21.9L32.0 19.7L34.0 18.8L36.0 18.7L38.0 18.9L40.0 19.0L42.0 18.9L44.0 18.7L46.0 18.8L48.0 19.7L50.0 21.9L52.0 25.3L54.0 29.6L56.0 34.1L58.0 37.9L60.0 40.2L62.0 40.4L64.0 38.4L66.0 34.9L68.0 30.8L70.0 27.4L72.0 26.1L74.0 27.6L76.0 32.2L78.0 39.4L80.0 48.0L82.0 56.6L84.0 63.8L86.0 68.4L88.0 69.9L90.0 68.6L92.0 65.2L94.0 61.1L96.0 57.6L98.0 55.6L100.0 55.8L102.0 58.1L104.0 61.9L106.0 66.4L108.0 70.7L110.0 74.1L112.0 76.3L114.0 77.2L116.0 77.3L118.0 77.1L120.0 77.0L122.0 77.1L124.0 77.3L126.0 77.2L128.0 76.3L130.0 74.1L132.0 70.7L134.0 66.4L136.0 61.9L138.0 58.1L140.0 55.8L142.0 55.6L144.0 57.6L146.0 61.1L148.0 65.2L150.0 68.6L152.0 69.9L154.0 68.4L156.0 63.8L158.0 56.6L160.0 48.0L162.0 39.4L164.0 32.2L166.0 27.6L168.0 26.1L170.0 27.4L172.0 30.8L174.0 34.9L176.0 38.4L178.0 40.4L180.0 40.2L182.0 37.9L184.0 34.1L186.0 29.6L188.0 25.3L190.0 21.9L192.0 19.7L194.0 18.8L196.0 18.7L198.0 18.9L200.0 19.0L202.0 18.9L204.0 18.7L206.0 18.8L208.0 19.7L210.0 21.9L212.0 25.3L214.0 29.6L216.0 34.1L218.0 37.9L220.0 40.2L222.0 40.4L224.0 38.4L226.0 34.9L228.0 30.8L230.0 27.4L232.0 26.1L234.0 27.6L236.0 32.2L238.0 39.4L240.0 48.0L242.0 56.6L244.0 63.8L246.0 68.4L248.0 69.9L250.0 68.6L252.0 65.2L254.0 61.1L256.0 57.6L258.0 55.6L260.0 55.8L262.0 58.1L264.0 61.9L266.0 66.4L268.0 70.7L270.0 74.1L272.0 76.3L274.0 77.2L276.0 77.3L278.0 77.1L280.0 77.0L282.0 77.1L284.0 77.3L286.0 77.2L288.0 76.3L290.0 74.1L292.0 70.7L294.0 66.4L296.0 61.9L298.0 58.1L300.0 55.8L302.0 55.6L304.0 57.6L306.0 61.1L308.0 65.2L310.0 68.6L312.0 69.9L314.0 68.4L316.0 63.8L318.0 56.6L320.0 48.0" fill="none" stroke="var(--muted)" stroke-width="1.6" stroke-dasharray="4 3"></path><path d="M0.0 48.0L2.0 46.0L4.0 43.9L6.0 41.9L8.0 40.0L10.0 38.1L12.0 36.2L14.0 34.4L16.0 32.7L18.0 31.1L20.0 29.6L22.0 28.2L24.0 27.0L26.0 25.8L28.0 24.8L30.0 24.0L32.0 23.3L34.0 22.7L36.0 22.3L38.0 22.1L40.0 22.0L42.0 22.1L44.0 22.3L46.0 22.7L48.0 23.3L50.0 24.0L52.0 24.8L54.0 25.8L56.0 27.0L58.0 28.2L60.0 29.6L62.0 31.1L64.0 32.7L66.0 34.4L68.0 36.2L70.0 38.1L72.0 40.0L74.0 41.9L76.0 43.9L78.0 46.0L80.0 48.0L82.0 50.0L84.0 52.1L86.0 54.1L88.0 56.0L90.0 57.9L92.0 59.8L94.0 61.6L96.0 63.3L98.0 64.9L100.0 66.4L102.0 67.8L104.0 69.0L106.0 70.2L108.0 71.2L110.0 72.0L112.0 72.7L114.0 73.3L116.0 73.7L118.0 73.9L120.0 74.0L122.0 73.9L124.0 73.7L126.0 73.3L128.0 72.7L130.0 72.0L132.0 71.2L134.0 70.2L136.0 69.0L138.0 67.8L140.0 66.4L142.0 64.9L144.0 63.3L146.0 61.6L148.0 59.8L150.0 57.9L152.0 56.0L154.0 54.1L156.0 52.1L158.0 50.0L160.0 48.0L162.0 46.0L164.0 43.9L166.0 41.9L168.0 40.0L170.0 38.1L172.0 36.2L174.0 34.4L176.0 32.7L178.0 31.1L180.0 29.6L182.0 28.2L184.0 27.0L186.0 25.8L188.0 24.8L190.0 24.0L192.0 23.3L194.0 22.7L196.0 22.3L198.0 22.1L200.0 22.0L202.0 22.1L204.0 22.3L206.0 22.7L208.0 23.3L210.0 24.0L212.0 24.8L214.0 25.8L216.0 27.0L218.0 28.2L220.0 29.6L222.0 31.1L224.0 32.7L226.0 34.4L228.0 36.2L230.0 38.1L232.0 40.0L234.0 41.9L236.0 43.9L238.0 46.0L240.0 48.0L242.0 50.0L244.0 52.1L246.0 54.1L248.0 56.0L250.0 57.9L252.0 59.8L254.0 61.6L256.0 63.3L258.0 64.9L260.0 66.4L262.0 67.8L264.0 69.0L266.0 70.2L268.0 71.2L270.0 72.0L272.0 72.7L274.0 73.3L276.0 73.7L278.0 73.9L280.0 74.0L282.0 73.9L284.0 73.7L286.0 73.3L288.0 72.7L290.0 72.0L292.0 71.2L294.0 70.2L296.0 69.0L298.0 67.8L300.0 66.4L302.0 64.9L304.0 63.3L306.0 61.6L308.0 59.8L310.0 57.9L312.0 56.0L314.0 54.1L316.0 52.1L318.0 50.0L320.0 48.0" fill="none" stroke="var(--red)" stroke-width="2.2"></path></svg><small><span>Distorted current (dashed)</span><span>After active filter (red)</span></small></div></div></div></section><section class="blk band"><div class="wrap"><div class="head"><span class="eyebrow">What we do</span><h2>Conversion systems for precision high-current and high-voltage work</h2></div><div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><p>Veeral Controls is a global power-electronics engineering company delivering mission-grade, high-density conversion systems for precision high-current and high-voltage applications.</p><p>With 30+ years of deep domain expertise, we design and build ultra-fast converters, multi-MW inverter platforms, high-current rectifiers, precision magnet supplies, and advanced IGBT/SiC power stacks deployed across renewable energy, research accelerators, rail traction, defence, and critical infrastructure.</p><p>Our integrated engineering, spanning wide-bandgap semiconductors, multi-pulse rectification, advanced magnetics, real-time control, and thermal-electromagnetic simulation, enables robust, modular systems optimised for dynamic response, harmonic performance, and long operational life. Trusted worldwide by OEMs and mission-critical industries.</p></div></div></section><section class="blk"><div class="wrap"><div class="head"><span class="eyebrow">Focus areas</span><h2>Three lines of work</h2></div><div class="grid3"><a class="card" href="/products/"><div class="thumb"><img src="/assets/img/train.webp" alt="Mobility" loading="lazy"></div><div class="body"><h3>Mobility</h3></div></a><a class="card" href="/products/"><div class="thumb"><img src="/assets/img/technology.webp" alt="Power Conversion Technologies" loading="lazy"></div><div class="body"><h3>Power Conversion Technologies</h3></div></a><a class="card" href="/products/"><div class="thumb"><img src="/assets/img/electronics.webp" alt="Defence High Power Electronics" loading="lazy"></div><div class="body"><h3>Defence High Power Electronics</h3></div></a></div></div></section><section class="blk band"><div class="wrap"><div class="head"><span class="eyebrow">Why Veeral</span><h2>Reliability engineered. Performance proven.</h2></div><div class="grid3"><div class="why"><div class="ic"><span class="gi" style="--m:url(/assets/img/mask-icon1.png)"></span></div><span>30+ years of design &amp; field experience</span></div><div class="why"><div class="ic"><span class="gi" style="--m:url(/assets/img/mask-icon2.png)"></span></div><span>Ability to handle extreme power levels (kA, kV)</span></div><div class="why"><div class="ic"><span class="gi" style="--m:url(/assets/img/mask-icon3.png)"></span></div><span>Custom-engineered solutions for unique applications</span></div><div class="why"><div class="ic"><span class="gi" style="--m:url(/assets/img/mask-icon4.png)"></span></div><span>Compliance with demanding global standards</span></div><div class="why"><div class="ic"><span class="gi" style="--m:url(/assets/img/mask-icon2.png)"></span></div><span>High-speed protection systems</span></div><div class="why"><div class="ic"><span class="gi" style="--m:url(/assets/img/mask-icon3.png)"></span></div><span>Deep materials, thermal, &amp; semiconductor expertise</span></div><div class="why"><div class="ic"><span class="gi" style="--m:url(/assets/img/mask-icon4.png)"></span></div><span>OEM-friendly modular product design</span></div></div></div></section><section class="blk"><div class="wrap"><div class="head"><span class="eyebrow">Industries &amp; applications</span><h2>Powering the world’s most demanding applications</h2></div><div class="grid3"><div class="card"><div class="thumb"><img src="/assets/img/solar.webp" alt="Wind &amp; Solar Power Conversion" loading="lazy"></div><div class="body"><h3>Wind &amp; Solar Power Conversion</h3><p>Multi-MW inverter platforms and converter stacks for utility-scale renewable systems.</p></div></div><div class="card"><div class="thumb"><img src="/assets/img/plasma.webp" alt="Plasma &amp; Fusion Research" loading="lazy"></div><div class="body"><h3>Plasma &amp; Fusion Research</h3><p>12 kA-80 kA precision supplies, fast-rise converters, and magnet power systems.</p></div></div><div class="card"><div class="thumb"><img src="/assets/img/rail.webp" alt="Rail Traction &amp; Locomotive Systems" loading="lazy"></div><div class="body"><h3>Rail Traction &amp; Locomotive Systems</h3><p>High-reliability propulsion converters and power modules.</p></div></div><div class="card"><div class="thumb"><img src="/assets/img/defence.webp" alt="Defence &amp; Aerospace Systems" loading="lazy"></div><div class="body"><h3>Defence &amp; Aerospace Systems</h3><p>MIL-grade motor controllers, extreme-shock electronics, and high-power conversion units.</p></div></div><div class="card"><div class="thumb"><img src="/assets/img/metal.webp" alt="Hydrogen, Metals &amp; Electro-Intensive" loading="lazy"></div><div class="body"><h3>Hydrogen, Metals &amp; Electro-Intensive</h3><p>High-current rectifiers up to 72 kA for sodium electrolysis, smelting, and metallurgical processes.</p></div></div><div class="card"><div class="thumb"><img src="/assets/img/power.webp" alt="Grid Power Quality &amp; FACTS" loading="lazy"></div><div class="body"><h3>Grid Power Quality &amp; FACTS</h3><p>Active harmonic filters, STATCOM modules, and custom reactive power solutions.</p></div></div></div></div></section><section class="blk band"><div class="wrap"><div class="head"><span class="eyebrow">Trusted by industry leaders</span><h2>Our clients include</h2></div><div class="clients"><div class="client"><img src="/assets/img/abb.webp" alt="ABB" loading="lazy"></div><div class="client"><img src="/assets/img/puv.webp" alt="Department of Atomic Energy" loading="lazy"></div><div class="client"><img src="/assets/img/drdo.webp" alt="DRDO" loading="lazy"></div><div class="client"><img src="/assets/img/indian-railways.webp" alt="Indian Railways" loading="lazy"></div><div class="client"><img src="/assets/img/bhel.webp" alt="BHEL" loading="lazy"></div><div class="client"><img src="/assets/img/shan-varun.webp" alt="Indian Navy" loading="lazy"></div><div class="client"><img src="/assets/img/tat-steel.webp" alt="Tata Steel" loading="lazy"></div><div class="client"><img src="/assets/img/aban.webp" alt="Aban" loading="lazy"></div><div class="client"><img src="/assets/img/cdac.webp" alt="C-DAC" loading="lazy"></div><div class="client"><img src="/assets/img/cpp.webp" alt="Centre of Plasma Physics, IPR" loading="lazy"></div><div class="client"><img src="/assets/img/electro.webp" alt="Electrotherm" loading="lazy"></div><div class="client"><img src="/assets/img/renew.webp" alt="ReNew Power" loading="lazy"></div><div class="client"><img src="/assets/img/signode.webp" alt="Signode" loading="lazy"></div><div class="client"><img src="/assets/img/tata.webp" alt="Tata Power" loading="lazy"></div><div class="client"><img src="/assets/img/trutz.webp" alt="Trützschler" loading="lazy"></div><div class="client"><img src="/assets/img/welmech.webp" alt="Welmech" loading="lazy"></div></div></div></section><section class="blk"><div class="wrap"><div class="head"><span class="eyebrow">Recent events</span><h2>On the road and on the floor</h2></div><div class="grid3"><div class="card"><div class="thumb"><img src="/assets/img/img1.webp" alt="Visit to Newcastle Australia" loading="lazy"></div><div class="body"><h3>Visit to Newcastle Australia</h3></div></div><div class="card"><div class="thumb"><img src="/assets/img/img2.webp" alt="Veeral at PCIM" loading="lazy"></div><div class="body"><h3>Veeral at PCIM</h3></div></div><div class="card"><div class="thumb"><img src="/assets/img/img3.webp" alt="Veeral at Windergy" loading="lazy"></div><div class="body"><h3>Veeral at Windergy</h3></div></div></div></div></section><section class="blk band"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center"><div><h2>Have a power-conversion requirement?</h2><p class="muted" style="margin-top:8px">Tell us the rating, the environment and the standard. We reply with the right platform.</p></div><div class="cta" style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn primary" href="/contact/">Contact us</a><button class="btn wa" data-open-wa="">Ask on WhatsApp</button></div></div></section></main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="/" style="margin-bottom:12px"><span class="lg"><img data-img="logo-mark" alt="" width="55" height="40" src="/assets/img/logo-mark.webp"><span class="wm" role="img" aria-label="Veeral Controls" data-mask="mask-word" style="--m: url(/assets/img/mask-word.png);"></span></span></a>
+        <p>Mission-grade power-conversion systems for extreme environments, precision applications and critical infrastructure. ISO 9001:2015 certified.</p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="/products/">Products</a></li>
+          <li><a href="/about/">About us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/jobs/">Jobs</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <ul>
+          <li class="mono">+91 99099 43601</li>
+          <li class="mono">info@veeral.com</li>
+          <li>Veeral Controls Pvt. Ltd.<br>B-29 GIDC, Sector-25,<br>Gandhinagar - 382044</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">Copyright 2025 Veeral Controls. Content and imagery from veeral.com, resized for this site. </div>
+  </div>
+</footer>
+
+<button id="waBtn" aria-haspopup="dialog" aria-controls="waPanel" aria-label="Chat with Veeral on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2z" opacity=".25"></path><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm0 1.800a8.200 8.200 0 1 1-4.300 15.200l-.3-.2-2.900.8.8-2.800-.2-.3A8.200 8.200 0 0 1 12 3.800z"></path><path d="M8.800 7.500c-.3 0-.7.100-1 .5-.5.600-.9 1.500-.2 2.900.8 1.600 2 3 3.600 3.900 1.600.8 2.700.9 3.400.6.6-.3 1-.9 1-1.400 0-.2 0-.4-.3-.5l-1.600-.8c-.3-.1-.5-.1-.7.1l-.6.7c-.1.2-.3.2-.5.1-.9-.4-1.900-1.200-2.500-2.200-.1-.2 0-.3.1-.4l.5-.6c.1-.2.2-.4.1-.6l-.8-1.700c-.1-.3-.3-.4-.6-.4z"></path></svg>
+  <span>Chat on WhatsApp</span>
+</button>
+
+<section id="waPanel" role="dialog" aria-label="Veeral assistant" hidden="">
+  <div class="wa-head">
+    <div><b>Veeral assistant</b><small id="waCtx">On: Home</small></div>
+    <button id="waClose" aria-label="Close chat">×</button>
+  </div>
+  <div id="waLog" aria-live="polite"></div>
+  <div class="chips" id="waChips"><button class="chip" type="button">What does Veeral build?</button><button class="chip" type="button">I need a harmonic filter</button><button class="chip" type="button">Where is the factory?</button></div>
+  <form class="wa-in" id="waForm">
+    <input id="waInput" type="text" placeholder="Type your question" autocomplete="off" aria-label="Your message">
+    <button class="btn primary sm" type="submit">Ask</button>
+  </form>
+  <div class="wa-foot">
+    <button class="btn wa" id="waCompose" type="button">Prepare WhatsApp message</button>
+    <div class="out" id="waOut" hidden="">
+      <label for="waText">Message for the Veeral team (you can edit it)
+        <textarea id="waText"></textarea>
+      </label>
+      <div class="copy">
+        <a class="btn wa sm" id="waLink" href="#" target="_blank" rel="noopener noreferrer">Open in WhatsApp</a>
+        <button class="btn ghost sm" id="waCopy" type="button">Copy text</button>
+        <span class="muted mono" id="waRef" style="font-size:.78rem"></span>
+      </div>
+      <small class="muted">Opens WhatsApp with the text filled in. You still press send there.</small>
+    </div>
+  </div>
+</section>
+
+
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
